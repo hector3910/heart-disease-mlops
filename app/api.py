@@ -18,7 +18,8 @@ def predict(data: Input):
     columns = ['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol',
                'FastingBS', 'RestingECG', 'MaxHR',
                'ExerciseAngina', 'Oldpeak', 'ST_Slope']
-    X = pd.DataFrame([data.features], columns=columns)   
+    X = pd.DataFrame([data.features], columns=columns)
     proba = model.predict_proba(X)[0][1]
     return {"heart_disease_probability": proba,
             "prediction": int(proba > 0.5)}
+    
