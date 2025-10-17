@@ -22,4 +22,3 @@ def predict(data: Input):
     proba = model.predict_proba(X)[0][1]
     return {"heart_disease_probability": proba,
             "prediction": int(proba > 0.5)}
-    
